@@ -1,18 +1,16 @@
 # Intuition
-<!-- Describe your first thoughts on how to solve this problem. -->
+Given a sorted array, the fastest way to find an element is through binary search, which repeatedly halves the search space.
 
 # Approach
-<!-- Describe your approach to solving the problem. -->
+Use binary search: Start with pointers at both ends of the array. Repeatedly check the middle element. If it's the target, return its index. If it's greater, search the left half; 
+if less, search the right half. Continue until the target is found or the pointers overlap.
 
 # Complexity
-- Time complexity:
-<!-- Add your time complexity here, e.g. $$O(n)$$ -->
-
-- Space complexity:
-<!-- Add your space complexity here, e.g. $$O(n)$$ -->
+- Time complexity: $$O(\log n)$$, as each step halves the array's search space.
+- Space complexity: $$O(1)$$, as it only uses a few variables for indexing, irrespective of the array size.
 
 # Code
-```
+```python
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         l, r = 0, len(nums) - 1
@@ -28,5 +26,3 @@ class Solution:
 
         return -1
 
-
-```
